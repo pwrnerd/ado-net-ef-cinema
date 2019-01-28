@@ -1,0 +1,5 @@
+D:\Dev\CSharp\DemoKino\DemoKino\obj\Debug\DemoKino.csprojResolveAssemblyReference.cache
+D:\Dev\CSharp\DemoKino\DemoKino\obj\Debug\DemoKino.Main.resources
+D:\Dev\CSharp\DemoKino\DemoKino\obj\Debug\DemoKino.Properties.Resources.resources
+D:\Dev\CSharp\DemoKino\DemoKino\obj\Debug\DemoKino.csproj.GenerateResource.Cache
+D:\Dev\CSharp\DemoKino\DemoKino\obj\Debug\DemoKino.csproj.CoreCompileInputs.cache

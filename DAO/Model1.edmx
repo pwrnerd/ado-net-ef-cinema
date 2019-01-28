@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KinoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Buchung">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlatzNr" Type="bigint" Nullable="false" />
+          <Property Name="VorfuehrungID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Film">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Bezeichnung" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Dauer" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FSK18" Type="bit" Nullable="false" />
+          <Property Name="Preis" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Saal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Bezeichnung" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AnzahlPlaetze" Type="bigint" Nullable="false" />
+          <Property Name="Dreidimensional" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vorfuehrung">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FilmID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Datum" Type="datetime" Nullable="false" />
+          <Property Name="SaalID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Bezeichnung" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Buchung_Vorfuehrung">
+          <End Role="Vorfuehrung" Type="Self.Vorfuehrung" Multiplicity="1" />
+          <End Role="Buchung" Type="Self.Buchung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vorfuehrung">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buchung">
+              <PropertyRef Name="VorfuehrungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vorfuehrung_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Vorfuehrung" Type="Self.Vorfuehrung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vorfuehrung">
+              <PropertyRef Name="FilmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vorfuehrung_Saal">
+          <End Role="Saal" Type="Self.Saal" Multiplicity="1" />
+          <End Role="Vorfuehrung" Type="Self.Vorfuehrung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Saal">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vorfuehrung">
+              <PropertyRef Name="SaalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KinoModelStoreContainer">
+          <EntitySet Name="Buchung" EntityType="Self.Buchung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film" EntityType="Self.Film" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Saal" EntityType="Self.Saal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vorfuehrung" EntityType="Self.Vorfuehrung" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Buchung_Vorfuehrung" Association="Self.FK_Buchung_Vorfuehrung">
+            <End Role="Vorfuehrung" EntitySet="Vorfuehrung" />
+            <End Role="Buchung" EntitySet="Buchung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vorfuehrung_Film" Association="Self.FK_Vorfuehrung_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Vorfuehrung" EntitySet="Vorfuehrung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vorfuehrung_Saal" Association="Self.FK_Vorfuehrung_Saal">
+            <End Role="Saal" EntitySet="Saal" />
+            <End Role="Vorfuehrung" EntitySet="Vorfuehrung" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KinoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Buchung">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlatzNr" Type="Int64" Nullable="false" />
+          <Property Name="VorfuehrungID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Vorfuehrung" Relationship="Self.FK_Buchung_Vorfuehrung" FromRole="Buchung" ToRole="Vorfuehrung" />
+        </EntityType>
+        <EntityType Name="Film">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bezeichnung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Dauer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FSK18" Type="Boolean" Nullable="false" />
+          <Property Name="Preis" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Vorfuehrung" Relationship="Self.FK_Vorfuehrung_Film" FromRole="Film" ToRole="Vorfuehrung" />
+        </EntityType>
+        <EntityType Name="Saal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bezeichnung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AnzahlPlaetze" Type="Int64" Nullable="false" />
+          <Property Name="Dreidimensional" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Vorfuehrung" Relationship="Self.FK_Vorfuehrung_Saal" FromRole="Saal" ToRole="Vorfuehrung" />
+        </EntityType>
+        <EntityType Name="Vorfuehrung">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FilmID" Type="Guid" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SaalID" Type="Guid" Nullable="false" />
+          <Property Name="Bezeichnung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Buchung" Relationship="Self.FK_Buchung_Vorfuehrung" FromRole="Vorfuehrung" ToRole="Buchung" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Vorfuehrung_Film" FromRole="Vorfuehrung" ToRole="Film" />
+          <NavigationProperty Name="Saal" Relationship="Self.FK_Vorfuehrung_Saal" FromRole="Vorfuehrung" ToRole="Saal" />
+        </EntityType>
+        <Association Name="FK_Buchung_Vorfuehrung">
+          <End Role="Vorfuehrung" Type="Self.Vorfuehrung" Multiplicity="1" />
+          <End Role="Buchung" Type="Self.Buchung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vorfuehrung">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buchung">
+              <PropertyRef Name="VorfuehrungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vorfuehrung_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Vorfuehrung" Type="Self.Vorfuehrung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vorfuehrung">
+              <PropertyRef Name="FilmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vorfuehrung_Saal">
+          <End Role="Saal" Type="Self.Saal" Multiplicity="1" />
+          <End Role="Vorfuehrung" Type="Self.Vorfuehrung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Saal">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vorfuehrung">
+              <PropertyRef Name="SaalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KinoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Buchung" EntityType="Self.Buchung" />
+          <EntitySet Name="Film" EntityType="Self.Film" />
+          <EntitySet Name="Saal" EntityType="Self.Saal" />
+          <EntitySet Name="Vorfuehrung" EntityType="Self.Vorfuehrung" />
+          <AssociationSet Name="FK_Buchung_Vorfuehrung" Association="Self.FK_Buchung_Vorfuehrung">
+            <End Role="Vorfuehrung" EntitySet="Vorfuehrung" />
+            <End Role="Buchung" EntitySet="Buchung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vorfuehrung_Film" Association="Self.FK_Vorfuehrung_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Vorfuehrung" EntitySet="Vorfuehrung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vorfuehrung_Saal" Association="Self.FK_Vorfuehrung_Saal">
+            <End Role="Saal" EntitySet="Saal" />
+            <End Role="Vorfuehrung" EntitySet="Vorfuehrung" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KinoModelStoreContainer" CdmEntityContainer="KinoEntities">
+          <EntitySetMapping Name="Buchung">
+            <EntityTypeMapping TypeName="KinoModel.Buchung">
+              <MappingFragment StoreEntitySet="Buchung">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PlatzNr" ColumnName="PlatzNr" />
+                <ScalarProperty Name="VorfuehrungID" ColumnName="VorfuehrungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Film">
+            <EntityTypeMapping TypeName="KinoModel.Film">
+              <MappingFragment StoreEntitySet="Film">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+                <ScalarProperty Name="Dauer" ColumnName="Dauer" />
+                <ScalarProperty Name="FSK18" ColumnName="FSK18" />
+                <ScalarProperty Name="Preis" ColumnName="Preis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Saal">
+            <EntityTypeMapping TypeName="KinoModel.Saal">
+              <MappingFragment StoreEntitySet="Saal">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+                <ScalarProperty Name="AnzahlPlaetze" ColumnName="AnzahlPlaetze" />
+                <ScalarProperty Name="Dreidimensional" ColumnName="Dreidimensional" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vorfuehrung">
+            <EntityTypeMapping TypeName="KinoModel.Vorfuehrung">
+              <MappingFragment StoreEntitySet="Vorfuehrung">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FilmID" ColumnName="FilmID" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="SaalID" ColumnName="SaalID" />
+                <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
