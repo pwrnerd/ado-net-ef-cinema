@@ -1,0 +1,15 @@
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\bin\Debug\DemoKino2.exe.config
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\bin\Debug\DemoKino2.exe
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\bin\Debug\DemoKino2.pdb
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\bin\Debug\DAO.dll
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\bin\Debug\DAO.pdb
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\bin\Debug\DAO.dll.config
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\obj\Debug\DemoKino.csprojResolveAssemblyReference.cache
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\obj\Debug\DemoKino.Main.resources
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\obj\Debug\DemoKino2.Properties.Resources.resources
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\obj\Debug\DemoKino.csproj.GenerateResource.Cache
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\obj\Debug\DemoKino.csproj.CoreCompileInputs.cache
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\obj\Debug\DemoKino2.exe
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DemoKino\obj\Debug\DemoKino2.pdb
