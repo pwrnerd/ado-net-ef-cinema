@@ -11,8 +11,6 @@ namespace DemoKino
     {
         public event EventHandler ModelChanged;
 
-        protected RefreshableObservableCollection<Vorfuehrung> m_VorfuehrungCollection;
-
         public MainViewModel(System.Collections.ObjectModel.ObservableCollection<Film> film,
             System.Collections.ObjectModel.ObservableCollection<Vorfuehrung> vorfuehrung,
             System.Collections.ObjectModel.ObservableCollection<Buchung> buchung,
@@ -46,47 +44,15 @@ namespace DemoKino
 
         private void BuchungCollection_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            m_VorfuehrungCollection.Refresh();
             ModelChanged?.Invoke(this, new EventArgs());
         }
 
         public System.Collections.ObjectModel.ObservableCollection<Film> FilmCollection { get; set; }
         public System.Collections.ObjectModel.ObservableCollection<Vorfuehrung> VorfuehrungCollection
         {
-            get
-            {
-                return m_VorfuehrungCollection as System.Collections.ObjectModel.ObservableCollection<Vorfuehrung>;
-            }
-            set
-            {
-                m_VorfuehrungCollection = new RefreshableObservableCollection<Vorfuehrung>(value.ToList<Vorfuehrung>());
-            }
+            get; set;
         }
         public System.Collections.ObjectModel.ObservableCollection<Buchung> BuchungCollection { get; set; }
         public System.Collections.ObjectModel.ObservableCollection<Saal> SaalCollection { get; set; }
     }
-
-    public class RefreshableObservableCollection<T> : System.Collections.ObjectModel.ObservableCollection<T>
-    {
-        public RefreshableObservableCollection() : base()
-        {
-            
-        }
-
-        public RefreshableObservableCollection(List<T> list) : base(list)
-        {
-
-        }
-
-        public RefreshableObservableCollection(IEnumerable<T> collection) : base(collection)
-        {
-
-        }
-
-        public void Refresh()
-        {
-            OnCollectionChanged(new System.Collections.Specialized.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction.Reset));
-        }
-    }
-
 }
