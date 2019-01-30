@@ -1,0 +1,12 @@
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\bin\Debug\DAO.dll.config
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\bin\Debug\DAO.dll
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\bin\Debug\DAO.pdb
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\bin\Debug\EntityFramework.dll
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\bin\Debug\EntityFramework.xml
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\bin\Debug\de\EntityFramework.resources.dll
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\obj\Debug\DAO.dll
+D:\Dev\CSharp\DemoKinoOriginal\DemoKinoOriginal\DemoKino\DAO\obj\Debug\DAO.pdb

@@ -78,6 +78,7 @@
     <Compile Include="Vorfuehrung.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="VorfuehrungCalc.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Conf" />

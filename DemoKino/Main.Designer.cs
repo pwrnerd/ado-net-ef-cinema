@@ -30,45 +30,46 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvFilme = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dgvSaal = new System.Windows.Forms.DataGridView();
-            this.dgvVorfuehrung = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dgvBuchung = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.iDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.platzNrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vorfuehrungDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.vorfuehrungBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buchungBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bezeichnungDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.filmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.filmBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.saalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.saalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bezeichnungDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anzahlPlaetzeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dreidimensionalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dauerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fSK18DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.preisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filmBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvSaal = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bezeichnungDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anzahlPlaetzeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dreidimensionalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.saalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvVorfuehrung = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RemainingSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bezeichnungDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.saalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.vorfuehrungBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgvBuchung = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.platzNrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vorfuehrungDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.buchungBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFilme)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSaal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVorfuehrung)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBuchung)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vorfuehrungBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buchungBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSaal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVorfuehrung)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vorfuehrungBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuchung)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buchungBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvFilme
@@ -87,6 +88,40 @@
             this.dgvFilme.RowTemplate.Height = 24;
             this.dgvFilme.Size = new System.Drawing.Size(649, 318);
             this.dgvFilme.TabIndex = 0;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // bezeichnungDataGridViewTextBoxColumn
+            // 
+            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
+            // 
+            // dauerDataGridViewTextBoxColumn
+            // 
+            this.dauerDataGridViewTextBoxColumn.DataPropertyName = "Dauer";
+            this.dauerDataGridViewTextBoxColumn.HeaderText = "Dauer";
+            this.dauerDataGridViewTextBoxColumn.Name = "dauerDataGridViewTextBoxColumn";
+            // 
+            // fSK18DataGridViewCheckBoxColumn
+            // 
+            this.fSK18DataGridViewCheckBoxColumn.DataPropertyName = "FSK18";
+            this.fSK18DataGridViewCheckBoxColumn.HeaderText = "FSK18";
+            this.fSK18DataGridViewCheckBoxColumn.Name = "fSK18DataGridViewCheckBoxColumn";
+            // 
+            // preisDataGridViewTextBoxColumn
+            // 
+            this.preisDataGridViewTextBoxColumn.DataPropertyName = "Preis";
+            this.preisDataGridViewTextBoxColumn.HeaderText = "Preis";
+            this.preisDataGridViewTextBoxColumn.Name = "preisDataGridViewTextBoxColumn";
+            // 
+            // filmBindingSource
+            // 
+            this.filmBindingSource.DataSource = typeof(DAO.Film);
             // 
             // label1
             // 
@@ -122,6 +157,34 @@
             this.dgvSaal.Size = new System.Drawing.Size(649, 254);
             this.dgvSaal.TabIndex = 3;
             // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            // 
+            // bezeichnungDataGridViewTextBoxColumn1
+            // 
+            this.bezeichnungDataGridViewTextBoxColumn1.DataPropertyName = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn1.HeaderText = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn1.Name = "bezeichnungDataGridViewTextBoxColumn1";
+            // 
+            // anzahlPlaetzeDataGridViewTextBoxColumn
+            // 
+            this.anzahlPlaetzeDataGridViewTextBoxColumn.DataPropertyName = "AnzahlPlaetze";
+            this.anzahlPlaetzeDataGridViewTextBoxColumn.HeaderText = "AnzahlPlaetze";
+            this.anzahlPlaetzeDataGridViewTextBoxColumn.Name = "anzahlPlaetzeDataGridViewTextBoxColumn";
+            // 
+            // dreidimensionalDataGridViewCheckBoxColumn
+            // 
+            this.dreidimensionalDataGridViewCheckBoxColumn.DataPropertyName = "Dreidimensional";
+            this.dreidimensionalDataGridViewCheckBoxColumn.HeaderText = "Dreidimensional";
+            this.dreidimensionalDataGridViewCheckBoxColumn.Name = "dreidimensionalDataGridViewCheckBoxColumn";
+            // 
+            // saalBindingSource
+            // 
+            this.saalBindingSource.DataSource = typeof(DAO.Saal);
+            // 
             // dgvVorfuehrung
             // 
             this.dgvVorfuehrung.AutoGenerateColumns = false;
@@ -129,6 +192,7 @@
             this.dgvVorfuehrung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn2,
             this.datumDataGridViewTextBoxColumn,
+            this.RemainingSeats,
             this.bezeichnungDataGridViewTextBoxColumn2,
             this.filmDataGridViewTextBoxColumn,
             this.saalDataGridViewTextBoxColumn});
@@ -139,6 +203,57 @@
             this.dgvVorfuehrung.Size = new System.Drawing.Size(750, 623);
             this.dgvVorfuehrung.TabIndex = 4;
             this.dgvVorfuehrung.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvVorfuehrung_DataError);
+            // 
+            // iDDataGridViewTextBoxColumn2
+            // 
+            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            // 
+            // RemainingSeats
+            // 
+            this.RemainingSeats.DataPropertyName = "RemainingSeats";
+            this.RemainingSeats.HeaderText = "RemainingSeats";
+            this.RemainingSeats.Name = "RemainingSeats";
+            this.RemainingSeats.ReadOnly = true;
+            // 
+            // bezeichnungDataGridViewTextBoxColumn2
+            // 
+            this.bezeichnungDataGridViewTextBoxColumn2.DataPropertyName = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn2.HeaderText = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn2.Name = "bezeichnungDataGridViewTextBoxColumn2";
+            // 
+            // filmDataGridViewTextBoxColumn
+            // 
+            this.filmDataGridViewTextBoxColumn.DataPropertyName = "FilmID";
+            this.filmDataGridViewTextBoxColumn.DataSource = this.filmBindingSource;
+            this.filmDataGridViewTextBoxColumn.DisplayMember = "Bezeichnung";
+            this.filmDataGridViewTextBoxColumn.HeaderText = "Film";
+            this.filmDataGridViewTextBoxColumn.Name = "filmDataGridViewTextBoxColumn";
+            this.filmDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.filmDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.filmDataGridViewTextBoxColumn.ValueMember = "ID";
+            // 
+            // saalDataGridViewTextBoxColumn
+            // 
+            this.saalDataGridViewTextBoxColumn.DataPropertyName = "SaalID";
+            this.saalDataGridViewTextBoxColumn.DataSource = this.saalBindingSource;
+            this.saalDataGridViewTextBoxColumn.DisplayMember = "Bezeichnung";
+            this.saalDataGridViewTextBoxColumn.HeaderText = "Saal";
+            this.saalDataGridViewTextBoxColumn.Name = "saalDataGridViewTextBoxColumn";
+            this.saalDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.saalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.saalDataGridViewTextBoxColumn.ValueMember = "ID";
+            // 
+            // vorfuehrungBindingSource
+            // 
+            this.vorfuehrungBindingSource.DataSource = typeof(DAO.Vorfuehrung);
             // 
             // label3
             // 
@@ -166,25 +281,6 @@
             this.dgvBuchung.Size = new System.Drawing.Size(648, 623);
             this.dgvBuchung.TabIndex = 6;
             this.dgvBuchung.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvBuchung_DataError);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1499, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Buchung";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(1502, 707);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(135, 32);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // iDDataGridViewTextBoxColumn3
             // 
@@ -221,115 +317,28 @@
             this.vorfuehrungDataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.vorfuehrungDataGridViewTextBoxColumn3.ValueMember = "ID";
             // 
-            // vorfuehrungBindingSource
-            // 
-            this.vorfuehrungBindingSource.DataSource = typeof(DAO.Vorfuehrung);
-            // 
             // buchungBindingSource
             // 
             this.buchungBindingSource.DataSource = typeof(DAO.Buchung);
             // 
-            // iDDataGridViewTextBoxColumn2
+            // label4
             // 
-            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1499, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Buchung";
             // 
-            // datumDataGridViewTextBoxColumn
+            // btnSave
             // 
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
-            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
-            // 
-            // bezeichnungDataGridViewTextBoxColumn2
-            // 
-            this.bezeichnungDataGridViewTextBoxColumn2.DataPropertyName = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn2.HeaderText = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn2.Name = "bezeichnungDataGridViewTextBoxColumn2";
-            // 
-            // filmDataGridViewTextBoxColumn
-            // 
-            this.filmDataGridViewTextBoxColumn.DataPropertyName = "FilmID";
-            this.filmDataGridViewTextBoxColumn.DataSource = this.filmBindingSource;
-            this.filmDataGridViewTextBoxColumn.DisplayMember = "Bezeichnung";
-            this.filmDataGridViewTextBoxColumn.HeaderText = "Film";
-            this.filmDataGridViewTextBoxColumn.Name = "filmDataGridViewTextBoxColumn";
-            this.filmDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.filmDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.filmDataGridViewTextBoxColumn.ValueMember = "ID";
-            // 
-            // filmBindingSource
-            // 
-            this.filmBindingSource.DataSource = typeof(DAO.Film);
-            // 
-            // saalDataGridViewTextBoxColumn
-            // 
-            this.saalDataGridViewTextBoxColumn.DataPropertyName = "SaalID";
-            this.saalDataGridViewTextBoxColumn.DataSource = this.saalBindingSource;
-            this.saalDataGridViewTextBoxColumn.DisplayMember = "Bezeichnung";
-            this.saalDataGridViewTextBoxColumn.HeaderText = "Saal";
-            this.saalDataGridViewTextBoxColumn.Name = "saalDataGridViewTextBoxColumn";
-            this.saalDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.saalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.saalDataGridViewTextBoxColumn.ValueMember = "ID";
-            // 
-            // saalBindingSource
-            // 
-            this.saalBindingSource.DataSource = typeof(DAO.Saal);
-            // 
-            // iDDataGridViewTextBoxColumn1
-            // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            // 
-            // bezeichnungDataGridViewTextBoxColumn1
-            // 
-            this.bezeichnungDataGridViewTextBoxColumn1.DataPropertyName = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn1.HeaderText = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn1.Name = "bezeichnungDataGridViewTextBoxColumn1";
-            // 
-            // anzahlPlaetzeDataGridViewTextBoxColumn
-            // 
-            this.anzahlPlaetzeDataGridViewTextBoxColumn.DataPropertyName = "AnzahlPlaetze";
-            this.anzahlPlaetzeDataGridViewTextBoxColumn.HeaderText = "AnzahlPlaetze";
-            this.anzahlPlaetzeDataGridViewTextBoxColumn.Name = "anzahlPlaetzeDataGridViewTextBoxColumn";
-            // 
-            // dreidimensionalDataGridViewCheckBoxColumn
-            // 
-            this.dreidimensionalDataGridViewCheckBoxColumn.DataPropertyName = "Dreidimensional";
-            this.dreidimensionalDataGridViewCheckBoxColumn.HeaderText = "Dreidimensional";
-            this.dreidimensionalDataGridViewCheckBoxColumn.Name = "dreidimensionalDataGridViewCheckBoxColumn";
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // bezeichnungDataGridViewTextBoxColumn
-            // 
-            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
-            // 
-            // dauerDataGridViewTextBoxColumn
-            // 
-            this.dauerDataGridViewTextBoxColumn.DataPropertyName = "Dauer";
-            this.dauerDataGridViewTextBoxColumn.HeaderText = "Dauer";
-            this.dauerDataGridViewTextBoxColumn.Name = "dauerDataGridViewTextBoxColumn";
-            // 
-            // fSK18DataGridViewCheckBoxColumn
-            // 
-            this.fSK18DataGridViewCheckBoxColumn.DataPropertyName = "FSK18";
-            this.fSK18DataGridViewCheckBoxColumn.HeaderText = "FSK18";
-            this.fSK18DataGridViewCheckBoxColumn.Name = "fSK18DataGridViewCheckBoxColumn";
-            // 
-            // preisDataGridViewTextBoxColumn
-            // 
-            this.preisDataGridViewTextBoxColumn.DataPropertyName = "Preis";
-            this.preisDataGridViewTextBoxColumn.HeaderText = "Preis";
-            this.preisDataGridViewTextBoxColumn.Name = "preisDataGridViewTextBoxColumn";
+            this.btnSave.Location = new System.Drawing.Point(1502, 707);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(135, 32);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Main
             // 
@@ -348,13 +357,13 @@
             this.Name = "Main";
             this.Text = "Hauptformular";
             ((System.ComponentModel.ISupportInitialize)(this.dgvFilme)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSaal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVorfuehrung)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBuchung)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vorfuehrungBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buchungBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSaal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVorfuehrung)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vorfuehrungBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuchung)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buchungBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,16 +394,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn anzahlPlaetzeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dreidimensionalDataGridViewCheckBoxColumn;
         private System.Windows.Forms.BindingSource vorfuehrungBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn filmDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn saalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn platzNrDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn vorfuehrungDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RemainingSeats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn filmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn saalDataGridViewTextBoxColumn;
     }
 }
 
