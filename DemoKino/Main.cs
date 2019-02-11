@@ -12,27 +12,35 @@ using DAO;
 namespace DemoKino
 {
     public partial class Main : Form
-    {
-        DAO.DAO dao = new DAO.DAO();
+    {        
         MainViewModel m_viewModel = null;
 
         public Main()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
+            DAO.DAO dao = new DAO.DAO();
+
             dao.Load();
 
-            m_viewModel = new MainViewModel(dao.mKino.Film.Local, dao.mKino.Vorfuehrung.Local, dao.mKino.Buchung.Local, dao.mKino.Saal.Local);
-            m_viewModel.ModelChanged += M_viewModel_ModelChanged;            
+            m_viewModel = new MainViewModel(dao);
+            m_viewModel.ModelChanged += M_viewModel_ModelChanged;
             filmBindingSource.DataSource = m_viewModel.FilmCollection;
             saalBindingSource.DataSource = m_viewModel.SaalCollection;
             vorfuehrungBindingSource.DataSource = m_viewModel.VorfuehrungCollection;
             buchungBindingSource.DataSource = m_viewModel.BuchungCollection;
+
+            // Validität überprüfen
+            if (!m_viewModel.ValidateBuchung(true))
+            {
+                dao.Save();
+                MessageBox.Show("Ungültige Buchungen wurden in der Datenbank entfernt");
+            }
         }
 
         private void M_viewModel_ModelChanged(object sender, EventArgs e)
@@ -45,7 +53,7 @@ namespace DemoKino
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            dao.Save();
+            m_viewModel.Save();
         }
 
         private void dgvVorfuehrung_DataError(object sender, DataGridViewDataErrorEventArgs e)

@@ -9,10 +9,10 @@
 
 namespace DAO
 {
-    using System;
+    using System;using System.ComponentModel;
     using System.Collections.Generic;
     
-    public partial class Saal
+    public partial class Saal : INotifyPropertyChanged
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Saal()
@@ -20,12 +20,28 @@ namespace DAO
             this.Vorfuehrung = new HashSet<Vorfuehrung>();
         }
     
-        public System.Guid ID { get; set; }
-        public string Bezeichnung { get; set; }
-        public long AnzahlPlaetze { get; set; }
-        public bool Dreidimensional { get; set; }
+        private System.Guid _ID; public System.Guid ID { get{ return _ID;} set{ if (_ID != value){ _ID = value; OnPropertyChanged("ID");} } }
+        private string _Bezeichnung; public string Bezeichnung { get{ return _Bezeichnung;} set{ if (_Bezeichnung != value){ _Bezeichnung = value; OnPropertyChanged("Bezeichnung");} } }
+        private long _AnzahlPlaetze; public long AnzahlPlaetze { get{ return _AnzahlPlaetze;} set{ if (_AnzahlPlaetze != value){ _AnzahlPlaetze = value; OnPropertyChanged("AnzahlPlaetze");} } }
+        private bool _Dreidimensional; public bool Dreidimensional { get{ return _Dreidimensional;} set{ if (_Dreidimensional != value){ _Dreidimensional = value; OnPropertyChanged("Dreidimensional");} } }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Vorfuehrung> Vorfuehrung { get; set; }
+    
+        #region INotifyPropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
+    
+        protected void OnPropertyChanged(string propertyName)
+        {
+            OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+        }
+    
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, e);
+        }
+        #endregion
+    
     }
 }

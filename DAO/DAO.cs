@@ -19,13 +19,20 @@ namespace DAO
             mKino.Set<Film>().ToList();
             mKino.Set<Saal>().ToList();
             mKino.Set<Vorfuehrung>().ToList();
-            mKino.Set<Buchung>().ToList(); 
+            mKino.Set<Buchung>().ToList();             
         }
 
         public void Save()
         {
-            mKino.SaveChanges();
-            Load();
+            try
+            {
+                mKino.SaveChanges();
+                Load();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

@@ -9,17 +9,33 @@
 
 namespace DAO
 {
-    using System;
+    using System;using System.ComponentModel;
     using System.Collections.Generic;
     
-    public partial class Buchung
+    public partial class Buchung : INotifyPropertyChanged
     {
-        public System.Guid ID { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public long PlatzNr { get; set; }
-        public System.Guid VorfuehrungID { get; set; }
+        private System.Guid _ID; public System.Guid ID { get{ return _ID;} set{ if (_ID != value){ _ID = value; OnPropertyChanged("ID");} } }
+        private string _Name; public string Name { get{ return _Name;} set{ if (_Name != value){ _Name = value; OnPropertyChanged("Name");} } }
+        private string _Email; public string Email { get{ return _Email;} set{ if (_Email != value){ _Email = value; OnPropertyChanged("Email");} } }
+        private long _PlatzNr; public long PlatzNr { get{ return _PlatzNr;} set{ if (_PlatzNr != value){ _PlatzNr = value; OnPropertyChanged("PlatzNr");} } }
+        private System.Guid _VorfuehrungID; public System.Guid VorfuehrungID { get{ return _VorfuehrungID;} set{ if (_VorfuehrungID != value){ _VorfuehrungID = value; OnPropertyChanged("VorfuehrungID");} } }
     
         public virtual Vorfuehrung Vorfuehrung { get; set; }
+    
+        #region INotifyPropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
+    
+        protected void OnPropertyChanged(string propertyName)
+        {
+            OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+        }
+    
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, e);
+        }
+        #endregion
+    
     }
 }
