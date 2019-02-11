@@ -9,10 +9,10 @@
 
 namespace DAO
 {
-    using System;
+    using System;using System.ComponentModel;
     using System.Collections.Generic;
     
-    public partial class Vorfuehrung
+    public partial class Vorfuehrung : INotifyPropertyChanged
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Vorfuehrung()
@@ -20,15 +20,31 @@ namespace DAO
             this.Buchung = new HashSet<Buchung>();
         }
     
-        public System.Guid ID { get; set; }
-        public System.Guid FilmID { get; set; }
-        public System.DateTime Datum { get; set; }
-        public System.Guid SaalID { get; set; }
-        public string Bezeichnung { get; set; }
+        private System.Guid _ID; public System.Guid ID { get{ return _ID;} set{ if (_ID != value){ _ID = value; OnPropertyChanged("ID");} } }
+        private System.Guid _FilmID; public System.Guid FilmID { get{ return _FilmID;} set{ if (_FilmID != value){ _FilmID = value; OnPropertyChanged("FilmID");} } }
+        private System.DateTime _Datum; public System.DateTime Datum { get{ return _Datum;} set{ if (_Datum != value){ _Datum = value; OnPropertyChanged("Datum");} } }
+        private System.Guid _SaalID; public System.Guid SaalID { get{ return _SaalID;} set{ if (_SaalID != value){ _SaalID = value; OnPropertyChanged("SaalID");} } }
+        private string _Bezeichnung; public string Bezeichnung { get{ return _Bezeichnung;} set{ if (_Bezeichnung != value){ _Bezeichnung = value; OnPropertyChanged("Bezeichnung");} } }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Buchung> Buchung { get; set; }
         public virtual Film Film { get; set; }
         public virtual Saal Saal { get; set; }
+    
+        #region INotifyPropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
+    
+        protected void OnPropertyChanged(string propertyName)
+        {
+            OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+        }
+    
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, e);
+        }
+        #endregion
+    
     }
 }
